@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
+    
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textIsSelectable="false" />
+    
+    <TextView
+        android:id="@+id/activity_date"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textIsSelectable="false"
+        android:layout_toRightOf="@id/user_name" />
+    
+    <TextView
+        android:id="@+id/activity_location"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textIsSelectable="false"
+        android:layout_below="@id/user_name" />
+    
+    <TextView
+        android:id="@+id/activity_ending"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textIsSelectable="false" 
+        android:layout_below="@id/activity_location"/>
+    
+    <TextView
+        android:id="@+id/activity_organism"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textIsSelectable="false" 
+        android:layout_below="@id/activity_location"
+        android:layout_toRightOf="@id/activity_ending"/>
+    
+</RelativeLayout>
