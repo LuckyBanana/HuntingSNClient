@@ -1,24 +1,20 @@
 package com.example.huntingsnclient;
 
-import httpclient.RESTHTTPClient;
-import httpclient.RESTHTTPClientAsync;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Set;
 
+import tasks.GetTimelineTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 public class TimelineFragment extends Fragment {
 
 	public static final String ARG_SECTION_NUMBER = "section_number";
+	public static final String userId = "";
 	private ListView activityList;
 
 	@Override
@@ -36,6 +32,10 @@ public class TimelineFragment extends Fragment {
 
 	public void activityListInit() {
 		activityList = (ListView)getView().findViewById(R.id.timeline_item_list);
+		
+		new GetTimelineTask(getActivity(), activityList).execute(userId);
+		
+		/*
 
 		SimpleAdapter mSchedule = new SimpleAdapter (
 				getActivity().getBaseContext(),
@@ -50,7 +50,7 @@ public class TimelineFragment extends Fragment {
 					R.id.activity_organism,}
 				);
 		activityList.setAdapter(mSchedule);
-
+	*/
 
 	}
 
@@ -71,8 +71,8 @@ public class TimelineFragment extends Fragment {
 		
 		// String request = RESTHTTPClient.get("userId/activity");
 		
-		RESTHTTPClientAsync client = new RESTHTTPClientAsync();
-		String request = client.getTimeline("userId");
+		//RESTHTTPClientImpl client = new RESTHTTPClientImpl();
+		//String request = client.getTimeline("userId");
 		
 		//Log.d("Request", "HTTP OK");
 		//Log.d("Result", request);
