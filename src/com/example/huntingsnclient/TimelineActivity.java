@@ -4,6 +4,7 @@ import java.util.Locale;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -20,7 +21,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class TimelineActivity extends FragmentActivity implements
-		ActionBar.TabListener {
+ActionBar.TabListener {
 
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -36,6 +37,8 @@ public class TimelineActivity extends FragmentActivity implements
 	 * The {@link ViewPager} that will host the section contents.
 	 */
 	ViewPager mViewPager;
+	
+	private final String userId = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -59,12 +62,12 @@ public class TimelineActivity extends FragmentActivity implements
 		// tab. We can also use ActionBar.Tab#select() to do this if we have
 		// a reference to the Tab.
 		mViewPager
-				.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-					@Override
-					public void onPageSelected(int position) {
-						actionBar.setSelectedNavigationItem(position);
-					}
-				});
+		.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+			@Override
+			public void onPageSelected(int position) {
+				actionBar.setSelectedNavigationItem(position);
+			}
+		});
 
 		// For each of the sections in the app, add a tab to the action bar.
 		for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
@@ -83,6 +86,21 @@ public class TimelineActivity extends FragmentActivity implements
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.timeline, menu);
 		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.new_activity_item:
+
+			Intent intent = new Intent(TimelineActivity.this, AddNewActivity.class);
+			startActivityForResult(intent, 1);
+			return true;
+		case R.id.action_settings:
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 	@Override
@@ -146,7 +164,7 @@ public class TimelineActivity extends FragmentActivity implements
 				fragment.setArguments(args);
 				return fragment;
 			}
-			
+
 		}
 
 		@Override
