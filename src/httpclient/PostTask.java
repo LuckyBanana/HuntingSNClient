@@ -1,4 +1,4 @@
-package tasks;
+package httpclient;
 
 import java.util.HashMap;
 

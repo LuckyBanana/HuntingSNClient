@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
 	private static final String[] DUMMY_CREDENTIALS = new String[] {
 			"foo@example.com:hello", "bar@example.com:world" };
 	
-	private static final String baseUrl = "http://www.apiLocation.com/";
+	private static final String baseUrl = "http://vita-instinct.herokuapp.com/";
 
 	/**
 	 * The default email to populate the email field with.
@@ -95,6 +95,7 @@ public class MainActivity extends Activity {
 					public void onClick(View view) {
 						//attemptLogin();
 						Intent intent = new Intent(MainActivity.this, TimelineActivity.class);
+						intent.putExtra("userId", "");
                         startActivity(intent);
 					}
 				});

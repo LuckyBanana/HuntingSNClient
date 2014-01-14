@@ -11,12 +11,13 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Map;
 
 import android.util.Log;
 
 public class RESTHTTPClient {
 
-	public final static String baseUrl = "http://www.serverUrl.com/api/";
+	public final static String baseUrl = "http://vita-instinct.herokuapp.com/";
 
 	public RESTHTTPClient() {
 
@@ -41,7 +42,7 @@ public class RESTHTTPClient {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		if(result != null) {
 			Log.d("HTTP GET", result);
 		}
@@ -56,17 +57,17 @@ public class RESTHTTPClient {
 		if(params != null) {
 
 			try {
-				url = new URL("http://mydomain/test.php");
+				url = new URL(baseUrl+requestUrl);
 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 				connection.setDoOutput(true);
 				connection.setRequestMethod("POST");
 				OutputStream out = connection.getOutputStream();
 				writeStream(out, ParamsStringBuilder.build(params));
-				
+
 				InputStream in = new BufferedInputStream(connection.getInputStream());
-			    result = readStream(in);
-			    
-			    connection.disconnect();
+				result = readStream(in);
+
+				connection.disconnect();
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -74,7 +75,7 @@ public class RESTHTTPClient {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		}
 		else {
 
@@ -92,7 +93,7 @@ public class RESTHTTPClient {
 		is.close();  
 		return sb.toString();
 	}
-	
+
 	private static void writeStream(OutputStream out, String params) {
 		OutputStreamWriter writer = new OutputStreamWriter(out);
 		try {
@@ -102,17 +103,17 @@ public class RESTHTTPClient {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	public static class ParamsStringBuilder {
-		
-		HashMap<String, String> params = new HashMap<String, String>();
-		
+
+		Map<String, String> params = new HashMap<String, String>();
+
 		public ParamsStringBuilder(HashMap<String, String> params) {
 			this.params = params;
 		}
-		
+
 		/*
 		 * RETURNS key1=value1&key2=value2&...
 		 */
@@ -122,10 +123,8 @@ public class RESTHTTPClient {
 				result += s+"="+params.get(s)+"&";
 			}
 			return result.substring(0,result.length()-1);
-			
+
 		}
 	}
-	
-	
 
 }
