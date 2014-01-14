@@ -16,13 +16,14 @@
 *.dmg
 *.gz
 *.iso
-*.jar
+#*.jar
 *.rar
 *.tar
 *.zip
 
 bin/*
-*.classpath
+
+.classpath
 
 
 # OS generated files #
