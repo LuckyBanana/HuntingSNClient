@@ -3,14 +3,22 @@
     package="com.example.huntingsnclient"
     android:versionCode="1"
     android:versionName="1.0" >
+<<<<<<< HEAD
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+=======
+    
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+>>>>>>> 169113cf5b46c7491b9e2b9f3f480f3f8e4a7b6e
     <uses-sdk
         android:minSdkVersion="18"
         android:targetSdkVersion="18" />
-
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"

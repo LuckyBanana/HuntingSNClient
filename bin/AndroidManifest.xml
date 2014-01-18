@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.huntingsnclient"
@@ -56,3 +57,60 @@
     </application>
 
 </manifest>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.huntingsnclient"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="18" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.huntingsnclient.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.huntingsnclient.TimelineActivity"
+            android:label="@string/title_activity_timeline" >
+        </activity>
+        <activity
+            android:name="com.example.huntingsnclient.AddNewActivity"
+            android:label="@string/title_activity_add_new" >
+        </activity>
+        <activity
+            android:name="com.example.huntingsnclient.SlidingTL"
+            android:label="@string/title_activity_sliding_tl" >
+        </activity>
+        <activity
+            android:name="com.example.huntingsnclient.TimelineFragment"
+            android:label="@string/title_activity_timeline_fragment" >
+        </activity>
+        <activity
+            android:name="com.example.huntingsnclient.ProfileFragment"
+            android:label="@string/title_activity_profile_fragment" >
+        </activity>
+        <activity
+            android:name="com.example.huntingsnclient.StatsFragment"
+            android:label="@string/title_activity_stats_fragment" >
+        </activity>
+    </application>
+
+</manifest>
+>>>>>>> 169113cf5b46c7491b9e2b9f3f480f3f8e4a7b6e
