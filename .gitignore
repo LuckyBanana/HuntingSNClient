@@ -7,6 +7,10 @@
 *.o
 *.so
 *.apk
+*.ap_
+
+# VM dex
+*.dex
 
 # Packages #
 ############
@@ -21,7 +25,9 @@
 *.tar
 *.zip
 
-bin/*
+# generated files
+bin/
+gen/
 
 .classpath
 
@@ -35,3 +41,5 @@ bin/*
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+*.class
