@@ -11,7 +11,6 @@ import com.example.huntingsnclient.R;
 import httpclient.RESTHTTPClient;
 import android.app.Activity;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -48,7 +47,7 @@ public class GetProfileTask extends AsyncTask<String, String, String> {
 		if(isCancelled()) {
 
 		}
-		else if(listViewreference != null && activityReference != null) {
+		else if(listViewreference != null && activityReference != null && userNameReference != null) {
 
 			//ArrayList<HashMap<String, String>> data = ListHashMapConstructor.generateTimelineListArray(result);
 			ArrayList<HashMap<String, String>> data = ListHashMapConstructor.test(result);
@@ -59,7 +58,7 @@ public class GetProfileTask extends AsyncTask<String, String, String> {
 					activity.getBaseContext(),
 					data, 
 					R.layout.activity_item,
-					new String[] {"user_name", "activity_date", "activity_location", "activity_ending", "activity_organism"}, 
+					new String[] {"username", "activity_date", "activity_location", "activity_ending", "activity_organism"}, 
 					new int[] {
 						R.id.user_name,
 						R.id.activity_date, 

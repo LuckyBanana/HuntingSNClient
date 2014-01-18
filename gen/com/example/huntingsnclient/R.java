@@ -40,8 +40,8 @@ public final class R {
         public static final int shadows=0x7f020005;
     }
     public static final class id {
-        public static final int action_forgot_password=0x7f090020;
-        public static final int action_settings=0x7f090021;
+        public static final int action_forgot_password=0x7f090023;
+        public static final int action_settings=0x7f090022;
         public static final int activities_listview=0x7f090017;
         public static final int activity_date=0x7f090008;
         public static final int activity_date_textview=0x7f090005;
@@ -53,13 +53,15 @@ public final class R {
         public static final int datePicker1=0x7f09001a;
         public static final int email=0x7f09000f;
         public static final int ending_spinner=0x7f090001;
+        public static final int friend_name=0x7f090020;
         public static final int friends_button_imageview=0x7f090016;
         public static final int friends_honrizontalscrollview=0x7f090015;
+        public static final int friends_listview=0x7f090021;
         public static final int login=0x7f090011;
         public static final int login_form=0x7f09000e;
         public static final int login_status=0x7f09000c;
         public static final int login_status_message=0x7f09000d;
-        public static final int new_activity_item=0x7f090022;
+        public static final int new_activity_item=0x7f090024;
         public static final int now_date=0x7f09001d;
         public static final int organism_edittext=0x7f090002;
         public static final int pager=0x7f090018;
@@ -86,28 +88,31 @@ public final class R {
         public static final int activity_timeline_fragment=0x7f030006;
         public static final int date_time_dialog=0x7f030007;
         public static final int fragment_timeline_dummy=0x7f030008;
+        public static final int friend_item=0x7f030009;
+        public static final int friends_dialog=0x7f03000a;
     }
     public static final class menu {
         public static final int add_new=0x7f080000;
-        public static final int main=0x7f080001;
-        public static final int profile=0x7f080002;
-        public static final int sliding_tl=0x7f080003;
-        public static final int stats=0x7f080004;
-        public static final int timeline=0x7f080005;
+        public static final int friends_dialog=0x7f080001;
+        public static final int main=0x7f080002;
+        public static final int profile=0x7f080003;
+        public static final int sliding_tl=0x7f080004;
+        public static final int stats=0x7f080005;
+        public static final int timeline=0x7f080006;
     }
     public static final class string {
-        public static final int action_forgot_password=0x7f050018;
+        public static final int action_forgot_password=0x7f050019;
         public static final int action_settings=0x7f050001;
-        public static final int action_sign_in_register=0x7f050016;
-        public static final int action_sign_in_short=0x7f050017;
+        public static final int action_sign_in_register=0x7f050017;
+        public static final int action_sign_in_short=0x7f050018;
         public static final int app_name=0x7f050000;
         public static final int cancel_date=0x7f050011;
-        public static final int error_field_required=0x7f05001d;
-        public static final int error_incorrect_password=0x7f05001c;
-        public static final int error_invalid_email=0x7f05001a;
-        public static final int error_invalid_password=0x7f05001b;
+        public static final int error_field_required=0x7f05001e;
+        public static final int error_incorrect_password=0x7f05001d;
+        public static final int error_invalid_email=0x7f05001b;
+        public static final int error_invalid_password=0x7f05001c;
         public static final int hello_world=0x7f050002;
-        public static final int login_progress_signing_in=0x7f050019;
+        public static final int login_progress_signing_in=0x7f05001a;
         /**  MenuBar Items 
          */
         public static final int new_activity_item=0x7f05000e;
@@ -117,11 +122,12 @@ public final class R {
         public static final int organism_hint=0x7f05000c;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f050014;
-        public static final int prompt_password=0x7f050015;
+        public static final int prompt_email=0x7f050015;
+        public static final int prompt_password=0x7f050016;
         public static final int save_activity_item=0x7f05000f;
         public static final int title_activity_add_new=0x7f050004;
-        public static final int title_activity_main=0x7f050013;
+        public static final int title_activity_friends_dialog=0x7f050013;
+        public static final int title_activity_main=0x7f050014;
         public static final int title_activity_profile_fragment=0x7f05000a;
         public static final int title_activity_sliding_tl=0x7f050005;
         public static final int title_activity_stats_fragment=0x7f05000b;

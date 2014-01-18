@@ -31,7 +31,7 @@ public class NewActivityTask extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
         // TODO
-        
+
     }
 
 

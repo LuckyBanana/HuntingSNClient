@@ -10,6 +10,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,9 +30,9 @@ public class RESTHTTPClient {
 		String result = "";
 
 		try {
-			//url = new URL(baseUrl+requestUrl);
-			url = new URL("http://www.google.fr/");
+			url = new URL(baseUrl+requestUrl);
 			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+			urlConnection.setRequestProperty("Accept", "application/json"); 
 			InputStream in = new BufferedInputStream(urlConnection.getInputStream());
 			result = readStream(in);
 			urlConnection.disconnect();
@@ -59,13 +60,15 @@ public class RESTHTTPClient {
 			try {
 				url = new URL(baseUrl+requestUrl);
 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+				connection.setRequestProperty("Accept", "application/json"); 
+				connection.setRequestProperty("User-Agent","Mozilla/5.0 ( compatible ) ");
 				connection.setDoOutput(true);
 				connection.setRequestMethod("POST");
 				OutputStream out = connection.getOutputStream();
 				writeStream(out, ParamsStringBuilder.build(params));
 
-				InputStream in = new BufferedInputStream(connection.getInputStream());
-				result = readStream(in);
+				//InputStream in = new BufferedInputStream(connection.getInputStream());
+				//result = readStream(in);
 
 				connection.disconnect();
 			} catch (MalformedURLException e) {
@@ -73,6 +76,7 @@ public class RESTHTTPClient {
 				e.printStackTrace();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 

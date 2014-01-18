@@ -3,7 +3,7 @@
     package="com.example.huntingsnclient"
     android:versionCode="1"
     android:versionName="1.0" >
-    
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -17,7 +17,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.huntingsnclient.MainActivity"
+            android:name="com.huntingsn.client.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,28 +26,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.huntingsnclient.TimelineActivity"
+            android:name="com.huntingsn.client.TimelineActivity"
             android:label="@string/title_activity_timeline" >
         </activity>
         <activity
-            android:name="com.example.huntingsnclient.AddNewActivity"
+            android:name="com.huntingsn.client.AddNewActivity"
             android:label="@string/title_activity_add_new" >
         </activity>
         <activity
-            android:name="com.example.huntingsnclient.SlidingTL"
+            android:name="com.huntingsn.client.SlidingTL"
             android:label="@string/title_activity_sliding_tl" >
         </activity>
         <activity
-            android:name="com.example.huntingsnclient.TimelineFragment"
+            android:name="com.huntingsn.client.TimelineFragment"
             android:label="@string/title_activity_timeline_fragment" >
         </activity>
         <activity
-            android:name="com.example.huntingsnclient.ProfileFragment"
+            android:name="com.huntingsn.client.ProfileFragment"
             android:label="@string/title_activity_profile_fragment" >
         </activity>
         <activity
-            android:name="com.example.huntingsnclient.StatsFragment"
+            android:name="com.huntingsn.client.StatsFragment"
             android:label="@string/title_activity_stats_fragment" >
+        </activity>
+        <activity
+            android:name="dialogs.FriendsDialog"
+            android:label="@string/title_activity_friends_dialog" >
         </activity>
     </application>
 

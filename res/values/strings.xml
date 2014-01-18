@@ -15,20 +15,20 @@
     <string name="title_activity_timeline_fragment">TimelineFragment</string>
     <string name="title_activity_profile_fragment">ProfileFragment</string>
     <string name="title_activity_stats_fragment">StatsFragment</string>
-    
+
     <!-- Activity form -->
     <string name="organism_hint">Organism</string>
     <string name="validate_activity_text">Post</string>
-    
+
     <!-- MenuBar Items -->
     <string name="new_activity_item">Add Activity</string>
     <string name="save_activity_item"></string>
-    
+
     <!-- Date and Time Dialog -->
     <string name="validate_date">OK</string>
     <string name="cancel_date">Cancel</string>
     <string name="now_date">Now</string>
-    
+
     <!-- Spinner Arrays -->
     <string-array name="amount_array">
         <item>1</item>
@@ -37,21 +37,20 @@
         <item>4</item>
         <item>5+</item>
     </string-array>
-    
     <string-array name="sex_array">
         <item>Male</item>
         <item>Female</item>
     </string-array>
-    
     <string-array name="ending_array">
         <item>Sight</item>
         <item>Kill</item>
     </string-array>
-    
     <string-array name="sector_array">
         <item>Hunting</item>
         <item>Fishing</item>
         <item>Picking</item>
     </string-array>
+
+    <string name="title_activity_friends_dialog">FriendsDialog</string>
 
 </resources>

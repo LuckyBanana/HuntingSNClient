@@ -1,6 +1,7 @@
 package httpclient;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 public class GetTask extends AsyncTask<String, String, String> {
 
@@ -14,7 +15,7 @@ public class GetTask extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
         // TODO
-        
+        Log.d("res", result);
     }
 
 

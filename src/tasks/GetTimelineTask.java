@@ -28,13 +28,12 @@ public class GetTimelineTask extends AsyncTask<String, String, String> {
 	@Override
 	protected String doInBackground(String... uri) {
 		// TODO Auto-generated method stub
-		return RESTHTTPClient.get(uri[0]);
+		return RESTHTTPClient.get("users/"+uri[0]+"/timeLine");
 	}
 
 	@Override
 	protected void onPostExecute(String result) {
 		super.onPostExecute(result);
-		
 		/*
 		 * TODO result = json
 		 * json -> arraylist<hashmap>
@@ -44,10 +43,10 @@ public class GetTimelineTask extends AsyncTask<String, String, String> {
 		if(isCancelled()) {
 
 		}
-		else if(listViewreference != null && activityReference != null) {
-
-			//ArrayList<HashMap<String, String>> data = ListHashMapConstructor.generateTimelineListArray(result);
-			ArrayList<HashMap<String, String>> data = ListHashMapConstructor.test(result);
+		else if(result != null && listViewreference != null && activityReference != null) {
+			ArrayList<HashMap<String, String>> data = ListHashMapConstructor.
+					generateTimelineListArray(result, activityReference.get().getBaseContext());
+			//ArrayList<HashMap<String, String>> data = ListHashMapConstructor.test(result);
 
 			ListView listView = listViewreference.get();
 			Activity activity = activityReference.get();
@@ -64,6 +63,9 @@ public class GetTimelineTask extends AsyncTask<String, String, String> {
 						R.id.activity_organism,}
 					);
 			listView.setAdapter(mSchedule);
+		}
+		else {
+			//Probleme de chargement
 		}
 
 	}
