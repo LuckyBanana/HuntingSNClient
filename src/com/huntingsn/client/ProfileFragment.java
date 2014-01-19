@@ -3,6 +3,7 @@ package com.huntingsn.client;
 import com.example.huntingsnclient.R;
 
 import tasks.GetProfileTask;
+import tasks.GetTimelineTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -36,26 +37,45 @@ public class ProfileFragment extends Fragment {
 	@Override
 	public void onActivityCreated (Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
+		profileInit();
+		
+	}
+	
+	@Override
+	public void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		//profileInit();
+	}
+	
+	public void profileInit() {
+		final String userName = getActivity().getIntent().getStringExtra(MainActivity.USER_NAME);
+		final String userId = getActivity().getIntent().getStringExtra(MainActivity.USER_ID);
+		
 		profile_pic = (ImageView)getView().findViewById(R.id.user_pic_imageview);
 		friends_pic = (ImageView)getView().findViewById(R.id.friends_button_imageview);
 		
 		user_name = (TextView)getView().findViewById(R.id.user_name_textview);
+		user_name.setText(userName);
 		
 		activities_list = (ListView)getView().findViewById(R.id.activities_listview);
 		
-		new GetProfileTask(getActivity(), activities_list, user_name);
+		
+		new GetProfileTask(getActivity(), activities_list).execute(userId);
 		
 		friends_pic.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				Bundle args = new Bundle();
+				args.putString("userId", userId);
 				FriendsDialog newFragment = new FriendsDialog();
 				android.support.v4.app.FragmentManager ft = getFragmentManager();
+				newFragment.setArguments(args);
 				newFragment.show(ft, "Friends");
 			}
 		});
-		
 	}
 
 }

@@ -6,6 +6,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
 
     <uses-sdk
         android:minSdkVersion="18"
@@ -16,6 +19,13 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDBLe3gV5UXNrdKrgIG11lIc85PS3SXbVg" />
+
         <activity
             android:name="com.huntingsn.client.MainActivity"
             android:label="@string/app_name" >
@@ -52,6 +62,12 @@
         <activity
             android:name="dialogs.FriendsDialog"
             android:label="@string/title_activity_friends_dialog" >
+        </activity>
+        <activity
+            android:name="com.huntingsn.client.StatsMapActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_map"
+            android:theme="@style/FullscreenTheme" >
         </activity>
     </application>
 

@@ -50,7 +50,7 @@ public class GetFriendsTask extends AsyncTask<String, String, String> {
 		else if(listViewreference != null && activityReference != null) {
 
 			//ArrayList<HashMap<String, String>> data = ListHashMapConstructor.generateTimelineListArray(result);
-			ArrayList<HashMap<String, String>> data = ListHashMapConstructor.test(result);
+			ArrayList<HashMap<String, String>> data = ListHashMapConstructor.generateFriendsListArray(result);
 
 			ListView listView = listViewreference.get();
 			Activity activity = activityReference.get();
@@ -58,7 +58,7 @@ public class GetFriendsTask extends AsyncTask<String, String, String> {
 					activity.getBaseContext(),
 					data, 
 					R.layout.friend_item,
-					new String[] {"username"}, 
+					new String[] {"fullName"}, 
 					new int[] {
 						R.id.friend_name,}
 					);

@@ -16,12 +16,14 @@ public class FriendsDialog extends DialogFragment {
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		
+		String userId = getArguments().getString("userId");
 
 		View layout = inflater.inflate(R.layout.friends_dialog, container, false);
 		getDialog().setTitle("Friends");
 		
 		friends_listview = (ListView)layout.findViewById(R.id.friends_listview);
-		new GetFriendsTask(getActivity(), friends_listview);
+		new GetFriendsTask(getActivity(), friends_listview).execute("users/"+userId+"/friends");
 		
 
 		return layout;

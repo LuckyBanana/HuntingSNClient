@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">HuntingSNClient</string>
+    <string name="app_name">Vita Instinct</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_timeline">TimelineActivity</string>
-    <string name="title_activity_add_new">AddNewActivity</string>
+    <string name="title_activity_timeline">Vita Instinct</string>
+    <string name="title_activity_add_new">Vita Instinct</string>
     <string name="title_activity_sliding_tl">SlidingTL</string>
 
     <!-- Timeline activity tabs -->
@@ -38,10 +38,12 @@
         <item>5+</item>
     </string-array>
     <string-array name="sex_array">
+        <item>---</item>
         <item>Male</item>
         <item>Female</item>
     </string-array>
     <string-array name="ending_array">
+        <item>---</item>
         <item>Sight</item>
         <item>Kill</item>
     </string-array>
@@ -52,5 +54,8 @@
     </string-array>
 
     <string name="title_activity_friends_dialog">FriendsDialog</string>
+    <string name="title_activity_map">Vita Instinct</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>

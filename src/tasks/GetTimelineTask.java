@@ -4,6 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import utils.CacheConstructor;
 import utils.ListHashMapConstructor;
 
 import com.example.huntingsnclient.R;
@@ -63,6 +64,8 @@ public class GetTimelineTask extends AsyncTask<String, String, String> {
 						R.id.activity_organism,}
 					);
 			listView.setAdapter(mSchedule);
+			
+			//CacheConstructor.cacheTimeline(result, activity.getCacheDir(), activityReference);
 		}
 		else {
 			//Probleme de chargement

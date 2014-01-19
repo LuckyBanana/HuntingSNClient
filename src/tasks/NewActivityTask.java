@@ -1,29 +1,34 @@
 package tasks;
 
+import httpclient.RESTHTTPClient;
+
+import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 
 public class NewActivityTask extends AsyncTask<String, String, String> {
 	
-	private Map<String, String> parameters = new HashMap<String, String>();
+	private HashMap<String, String> parameters = new HashMap<String, String>();
+	private WeakReference<Activity> activityRef;
 	
-	public NewActivityTask(Map<String, String> parameters) {
+	/*
+	 *  
+	 */
+	
+	public NewActivityTask(HashMap<String, String> parameters, WeakReference<Activity> ref) {
 		this.parameters = parameters;
+		this.activityRef = ref;
 	}
 
 	@Override
 	protected String doInBackground(String... params) {
 		// TODO Auto-generated method stub
 		String uri = params[0];
-		//HashMap<String, String> parameters = new HashMap<String, String>();
-		int i = 1;
-		while(i+1 < params.length) {
-			parameters.put(params[i], params[i+1]);
-			i = i+2;
-		}
-		return "";//RESTHTTPClient.post(params[0]);
+
+		return RESTHTTPClient.post(params[0], parameters);
 		
 	}
 	
@@ -31,7 +36,7 @@ public class NewActivityTask extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
         // TODO
-
+        activityRef.get().finish();
     }
 
 

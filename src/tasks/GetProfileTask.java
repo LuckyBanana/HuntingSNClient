@@ -20,18 +20,16 @@ public class GetProfileTask extends AsyncTask<String, String, String> {
 	private final WeakReference<ListView> listViewreference;
 	private final WeakReference<Activity> activityReference;
 	
-	private final WeakReference<TextView> userNameReference;
 
-	public GetProfileTask(Activity activity, ListView listView, TextView textView) {
+	public GetProfileTask(Activity activity, ListView listView) {
 		listViewreference = new WeakReference<ListView>(listView);
 		activityReference = new WeakReference<Activity>(activity);
-		userNameReference = new WeakReference<TextView>(textView);
 	}
 
 	@Override
 	protected String doInBackground(String... uri) {
 		// TODO Auto-generated method stub
-		return RESTHTTPClient.get(uri[0]);
+		return RESTHTTPClient.get("users/"+uri[0]+"/activities");
 	}
 
 	@Override
@@ -47,10 +45,11 @@ public class GetProfileTask extends AsyncTask<String, String, String> {
 		if(isCancelled()) {
 
 		}
-		else if(listViewreference != null && activityReference != null && userNameReference != null) {
-
-			//ArrayList<HashMap<String, String>> data = ListHashMapConstructor.generateTimelineListArray(result);
-			ArrayList<HashMap<String, String>> data = ListHashMapConstructor.test(result);
+		else if(listViewreference != null && activityReference != null) {
+			
+			ArrayList<HashMap<String, String>> data = 
+					ListHashMapConstructor.generateTimelineListArray(result, activityReference.get().getBaseContext());
+			//ArrayList<HashMap<String, String>> data = ListHashMapConstructor.test(result);
 
 			ListView listView = listViewreference.get();
 			Activity activity = activityReference.get();
@@ -58,7 +57,7 @@ public class GetProfileTask extends AsyncTask<String, String, String> {
 					activity.getBaseContext(),
 					data, 
 					R.layout.activity_item,
-					new String[] {"username", "activity_date", "activity_location", "activity_ending", "activity_organism"}, 
+					new String[] {"user_name", "activity_date", "activity_location", "activity_ending", "activity_organism"}, 
 					new int[] {
 						R.id.user_name,
 						R.id.activity_date, 

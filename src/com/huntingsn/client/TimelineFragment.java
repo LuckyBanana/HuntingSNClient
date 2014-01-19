@@ -6,6 +6,7 @@ import java.util.HashMap;
 import com.example.huntingsnclient.R;
 
 import tasks.GetTimelineTask;
+import utils.CacheLoader;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -29,7 +30,15 @@ public class TimelineFragment extends Fragment {
 	@Override
 	public void onActivityCreated (Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
+		CacheLoader.load(getActivity().getCacheDir());
 		activityListInit();
+	}
+	
+	@Override
+	public void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		//activityListInit();
 	}
 
 	public void activityListInit() {

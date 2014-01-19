@@ -20,10 +20,17 @@
         android:layout_below="@id/sector_spinner" />
 
     <EditText
-        android:id="@+id/organism_edittext"
+        android:id="@+id/amount_edittext"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/ending_spinner"
+        android:hint="Amount" />
+
+    <EditText
+        android:id="@+id/organism_edittext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/amount_edittext"
         android:hint="@string/organism_hint" />
 
     <Spinner
@@ -32,22 +39,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/organism_edittext" />
 
-    <Spinner
-        android:id="@+id/amount_spinner"
+    <TextView
+        android:id="@+id/activity_date_textview"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/organism_edittext"
-        android:layout_toRightOf="@id/sex_spinner" />
-    
-    <TextView android:id="@+id/activity_date_textview"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sex_spinner"/>
-    
-    <Button android:id="@+id/validate_activity_button"
+        android:layout_below="@id/sex_spinner" />
+
+    <Button
+        android:id="@+id/validate_activity_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/activity_date_textview"
-        android:text="@string/validate_activity_text"/>
+        android:text="@string/validate_activity_text" />
 
 </RelativeLayout>

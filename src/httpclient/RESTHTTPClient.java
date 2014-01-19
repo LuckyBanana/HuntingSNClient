@@ -66,9 +66,9 @@ public class RESTHTTPClient {
 				connection.setRequestMethod("POST");
 				OutputStream out = connection.getOutputStream();
 				writeStream(out, ParamsStringBuilder.build(params));
-
-				//InputStream in = new BufferedInputStream(connection.getInputStream());
-				//result = readStream(in);
+				Log.d("params", ParamsStringBuilder.build(params));
+				InputStream in = new BufferedInputStream(connection.getInputStream());
+				result = readStream(in);
 
 				connection.disconnect();
 			} catch (MalformedURLException e) {
@@ -101,7 +101,7 @@ public class RESTHTTPClient {
 	private static void writeStream(OutputStream out, String params) {
 		OutputStreamWriter writer = new OutputStreamWriter(out);
 		try {
-			writer.write("nom=dupont");
+			writer.write(params);
 			writer.flush();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

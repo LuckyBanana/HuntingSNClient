@@ -24,6 +24,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.example.huntingsnclient.R;
+import com.mongodb.BasicDBObject;
 import com.mongodb.util.JSON;
 
 import android.animation.Animator;
@@ -31,6 +32,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -62,6 +64,7 @@ public class MainActivity extends Activity {
 	 */
 	public static final String EXTRA_EMAIL = "com.example.android.authenticatordemo.extra.EMAIL";
 	public final static String USER_ID = "com.annotations.client.USER_ID";
+	public final static String USER_NAME = "com.annotations.client.USER_NAME";
 
 	/**
 	 * Keep track of the login task to ensure we can cancel it if requested.
@@ -84,9 +87,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_main);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		
-		new GetTask().execute("users/52d88d541a9d9a82cfcb1382");
-
 		// Set up the login form.
 		mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
 		mEmailView = (EditText) findViewById(R.id.email);
@@ -262,25 +264,25 @@ public class MainActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(final String success) {
+			super.onPostExecute(success);
 			mAuthTask = null;
 			showProgress(false);
 			String userId = "";
-			userId = "52d88d541a9d9a82cfcb1382";
-
+			String userName = "";
 			if (success != null) {
-				/*
-				Log.d("success", success);
-				JSONArray response = (JSONArray) JSON.parse(success);
-				try {
-					userId = response.getJSONObject(0).getString("id");
-					Log.d("id", userId);
-				} catch (JSONException e*) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				*/
+				
+				BasicDBObject rs = (BasicDBObject) JSON.parse(success);
+				BasicDBObject oid = (BasicDBObject) rs.get("id");
+				userId = 
+						new ObjectId(Integer.parseInt(oid.getString("timeSecond")), 
+								Integer.parseInt(oid.getString("machine")), 
+								Integer.parseInt(oid.getString("inc"))).toString();
+				userName = rs.getString("fullName");
+				
+				
 				Intent intent = new Intent(MainActivity.this, TimelineActivity.class);
 				intent.putExtra(MainActivity.USER_ID, userId);
+				intent.putExtra(MainActivity.USER_NAME, userName);
 				startActivity(intent);
 			} else {
 				mPasswordView
