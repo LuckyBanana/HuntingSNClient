@@ -52,5 +52,7 @@
     </string-array>
 
     <string name="title_activity_friends_dialog">FriendsDialog</string>
+    <string name="title_activity_map">Map</string>
+    <string name="unableToShowMap">"Sorry! unable to show map"</string>
 
 </resources>
