@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    
+    <!-- login -->
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="login_signin_process">Sign in &#8230; please wait</string>
+    <string name="login_action_sign">Sign in</string>
+    
+    
     <string name="app_name">Vita Instinct</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
@@ -19,6 +26,12 @@
     <!-- Activity form -->
     <string name="organism_hint">Organism</string>
     <string name="validate_activity_text">Post</string>
+    <string name="save_activity">Save Activity</string>
+    <string name="enable_gps">Enable GPS</string>
+    <string name="press_back_gps">Press back once the gps is enabled</string>
+    <string name="press_back_twice">Please press BACK again to exit</string>
+    <string name="valid_organism_required">You must indicate a valid organism.</string>
+    <string name="amount_edittext">Amount</string>
 
     <!-- MenuBar Items -->
     <string name="new_activity_item">Add Activity</string>
@@ -28,6 +41,17 @@
     <string name="validate_date">OK</string>
     <string name="cancel_date">Cancel</string>
     <string name="now_date">Now</string>
+    <string name="date_picker_title">Date and Time picker</string>
+    <string name="friends">Friends</string>
+    
+    <!--  Map  -->
+    <string name="map_activity_all">Map of all the activities</string>
+    <string name="map_activity_personal">Map of your personal activities</string>
+    <string name="unable_show_map">Sorry! unable to create maps</string>
+    <string name="hunting">Hunting</string>
+    <string name="fishing">Fishing</string>
+    <string name="picking">Picking</string>
+    
 
     <!-- Spinner Arrays -->
     <string-array name="amount_array">

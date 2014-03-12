@@ -9,14 +9,16 @@
         android:id="@+id/user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textIsSelectable="false" />
+        android:textIsSelectable="false"
+        android:textStyle="bold" />
     
     <TextView
         android:id="@+id/activity_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textIsSelectable="false"
-        android:layout_toRightOf="@id/user_name" />
+        android:layout_toRightOf="@id/user_name"
+        android:textColor="#999999" />
     
     <TextView
         android:id="@+id/activity_location"
@@ -38,6 +40,7 @@
         android:layout_height="wrap_content"
         android:textIsSelectable="false" 
         android:layout_below="@id/activity_location"
-        android:layout_toRightOf="@id/activity_ending"/>
+        android:layout_toRightOf="@id/activity_ending"
+        android:textStyle="bold"/>
     
 </RelativeLayout>

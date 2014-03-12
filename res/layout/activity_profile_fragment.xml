@@ -21,7 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/user_pic_imageview"
         android:layout_toRightOf="@+id/user_pic_imageview"
-        android:text="profile" />
+		android:textStyle="bold"
+		android:textSize="35sp"/>
 
     <HorizontalScrollView
         android:id="@+id/friends_honrizontalscrollview"

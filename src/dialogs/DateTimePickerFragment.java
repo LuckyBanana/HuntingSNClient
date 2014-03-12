@@ -36,7 +36,7 @@ public class DateTimePickerFragment extends DialogFragment implements DatePicker
 
 		View layout = inflater.inflate(R.layout.date_time_dialog, container, false);
 
-		getDialog().setTitle("Date and Time picker");
+		getDialog().setTitle(R.string.date_picker_title);
 		buttonsInit(layout);
 
 		datePicker = (DatePicker)layout.findViewById(R.id.datePicker1);

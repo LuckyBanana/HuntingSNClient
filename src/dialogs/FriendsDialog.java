@@ -20,7 +20,7 @@ public class FriendsDialog extends DialogFragment {
 		String userId = getArguments().getString("userId");
 
 		View layout = inflater.inflate(R.layout.friends_dialog, container, false);
-		getDialog().setTitle("Friends");
+		getDialog().setTitle(R.string.friends);
 		
 		friends_listview = (ListView)layout.findViewById(R.id.friends_listview);
 		new GetFriendsTask(getActivity(), friends_listview).execute("users/"+userId+"/friends");

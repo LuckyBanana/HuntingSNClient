@@ -66,7 +66,7 @@ public class TimelineFragment extends Fragment {
 
 		for(int i = 0; i < 5; i++) {
 			map = new HashMap<String, String>();
-			map.put("username", "Code : "+"user : "+i);
+			map.put("user_name", "Code : "+"user : "+i);
 			map.put("activity_date", "Date : "+"date : "+i);
 			map.put("activity_location", "Code : "+"location : "+i);
 			map.put("activity_ending", "Code : "+"ending : "+i);

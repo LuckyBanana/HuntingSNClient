@@ -19,13 +19,16 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class GetMarkersTask extends AsyncTask<String, String, String> {
+public class GetPersonalMarkersTask extends AsyncTask<String, String, String> {
 	
 	private final WeakReference<GoogleMap> mapReference;
+	private final WeakReference<Activity> activityReference;
 	
-	public GetMarkersTask(WeakReference<GoogleMap> gMapRef) {
+	public GetPersonalMarkersTask(WeakReference<GoogleMap> gMapRef, WeakReference<Activity> activityRef) {
 		mapReference = gMapRef;
+		activityReference = activityRef;
 	}
+		
 	
 	@Override
 	protected String doInBackground(String... uri) {
@@ -62,12 +65,15 @@ public class GetMarkersTask extends AsyncTask<String, String, String> {
 				String sector = map.get("sector");
 				if(sector.contains("hunting")) {
 					marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
-				}
+					marker.snippet(activityReference.get().getBaseContext().getString(R.string.hunting));
+					}
 				else if(sector.contains("fishing")) {
 					marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+					marker.snippet(activityReference.get().getBaseContext().getString(R.string.fishing));
 				}
 				else if(sector.contains("picking")){
 					marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+					marker.snippet(activityReference.get().getBaseContext().getString(R.string.picking));
 				}
 				gMap.addMarker(marker);
 				

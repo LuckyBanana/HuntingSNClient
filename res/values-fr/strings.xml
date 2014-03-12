@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- login -->
+    <string name="login_email">Email</string>
+    <string name="login_password">Mot de passe</string>
+    <string name="login_signin_process">Identification &#8230; Veuillez patienter</string>
+    <string name="login_action_sign">Login</string>
+
+    <string name="app_name">Vita Instinct</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="hello_world">Bonjour le monde</string>
+    <string name="title_activity_timeline">Vita Instinct</string>
+    <string name="title_activity_add_new">Vita Instinct</string>
+    <string name="title_activity_sliding_tl">SlidingTL</string>
+
+    <!-- Timeline activity tabs -->
+    <string name="title_section1">Flux activité</string>
+    <string name="title_section2">Profil</string>
+    <string name="title_section3">Stats</string>
+    <string name="title_activity_timeline_fragment">TimelineFragment</string>
+    <string name="title_activity_profile_fragment">ProfileFragment</string>
+    <string name="title_activity_stats_fragment">StatsFragment</string>
+
+    <!-- Activity form -->
+    <string name="organism_hint">Organisme</string>
+    <string name="validate_activity_text">Valider</string>
+    <string name="save_activity">Sauvegarder l\'activité</string>
+    <string name="enable_gps">Activer le GPS</string>
+    <string name="press_back_gps">Appuyer une fois sur retour pour activer le gps</string>
+    <string name="press_back_twice">Apputer sur RETOUR encore pour quitter</string>
+    <string name="valid_organism_required">Vous devez indiquer un organisme valide.</string>
+    <string name="amount_edittext">Quantité</string>
+
+    <!-- MenuBar Items -->
+    <string name="new_activity_item">Ajouter une activity</string>
+    <string name="save_activity_item"></string>
+
+    <!-- Date and Time Dialog -->
+    <string name="validate_date">OK</string>
+    <string name="cancel_date">Annuler</string>
+    <string name="now_date">Now</string>
+    <string name="date_picker_title">Choisir Heure et Date</string>
+    <string name="friends">Amis</string>
+    
+    <!--  Map  -->
+    <string name="map_activity_all">Carte de toutes les activités</string>
+    <string name="map_activity_personal">Carte des activités personnelles</string>
+    <string name="unable_show_map">Désolé! impossible de créer la carte</string>
+    <string name="hunting">Chasse</string>
+    <string name="fishing">Pèche</string>
+    <string name="picking">Promenade</string>
+
+    <!-- Spinner Arrays -->
+    <string-array name="amount_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5+</item>
+    </string-array>
+    <string-array name="sex_array">
+        <item>---</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="ending_array">
+        <item>---</item>
+        <item>Sight</item>
+        <item>Kill</item>
+    </string-array>
+    <string-array name="sector_array">
+        <item>Chasse</item>
+        <item>Pèche</item>
+        <item>Promenade</item>
+    </string-array>
+
+    <string name="title_activity_friends_dialog">FriendsDialog</string>
+    <string name="title_activity_map">Vita Instinct</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+</resources>

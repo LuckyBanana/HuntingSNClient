@@ -112,7 +112,7 @@ public class AddNewActivity extends Activity {
 		};
 
 		if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-			validate_button.setText("Save Activity");
+			validate_button.setText(R.string.save_activity);
 			//validate_button.setBackgroundColor(Color.GRAY);
 			validate_button.setEnabled(false);
 			validate_button.setOnClickListener(new OnClickListener() {
@@ -138,13 +138,13 @@ public class AddNewActivity extends Activity {
 
 		}else{
 			//validate_button.setBackgroundColor(Color.GREEN);
-			validate_button.setText("Enable GPS");
+			validate_button.setText(R.string.enable_gps);
 			validate_button.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					Toast.makeText(getApplicationContext(), "Press back once the gps is enabled", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(), R.string.press_back_gps, Toast.LENGTH_SHORT).show();
 					Intent callGPSSettingIntent = new Intent(
 							android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 					startActivity(callGPSSettingIntent);
@@ -251,7 +251,7 @@ public class AddNewActivity extends Activity {
 			return;
 		}
 		this.doubleBackToExitPressedOnce = true;
-		Toast.makeText(this, "Please press BACK again to exit", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, R.string.press_back_twice, Toast.LENGTH_SHORT).show();
 		new Handler().postDelayed(new Runnable() {
 
 			@Override
@@ -266,12 +266,25 @@ public class AddNewActivity extends Activity {
 
 
 		if(organism_edittext.getText().toString().length() == 0) {
-			organism_edittext.setError("You must indicate a valid organism.");
+			organism_edittext.setError(getString(R.string.valid_organism_required));
 			return false;
 		}
 		else  {
 			newActivityValues.clear();
-			newActivityValues.put("sector", sector_spinner.getSelectedItem().toString().toLowerCase());
+			String selectedSector = sector_spinner.getSelectedItem().toString().toLowerCase();
+			if(selectedSector.contains("chasse")) {
+				newActivityValues.put("sector", "hunting");
+			}
+			else if (selectedSector.contains("pèche")) {
+				newActivityValues.put("sector", "fishing");
+			}
+			else if(selectedSector.contains("promenade")) {
+				newActivityValues.put("sector", "picking");
+			}
+			else {
+				newActivityValues.put("sector", selectedSector);
+			}
+			//newActivityValues.put("sector", sector_spinner.getSelectedItem().toString().toLowerCase());
 			newActivityValues.put("activityEnding", ending_spinner.getSelectedItem().toString().toLowerCase());
 			newActivityValues.put("organism", organism_edittext.getText().toString());
 			newActivityValues.put("sex", sex_spinner.getSelectedItem().toString().toLowerCase());

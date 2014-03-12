@@ -1,21 +1,21 @@
-package com.huntingsn.client;
+package maps;
 
 import java.lang.ref.WeakReference;
 
-import tasks.GetMarkersTask;
+import tasks.GetAllMarkersTask;
+import tasks.GetPersonalMarkersTask;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.huntingsnclient.R;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 
-public class StatsMapActivity extends Activity {
+public class StatsMapAllActivity extends Activity {
 
 	// Google Map
     private GoogleMap googleMap;
@@ -48,7 +48,7 @@ public class StatsMapActivity extends Activity {
             // check if map is created successfully or not
             if (googleMap == null) {
                 Toast.makeText(getApplicationContext(),
-                        "Sorry! unable to create maps", Toast.LENGTH_SHORT)
+                		R.string.unable_show_map, Toast.LENGTH_SHORT)
                         .show();
             }
             else {
@@ -64,7 +64,7 @@ public class StatsMapActivity extends Activity {
     }
     
     public void placeMarkers() {
-    	new GetMarkersTask(new WeakReference<GoogleMap>(googleMap)).execute(userId);
+    	new GetAllMarkersTask(new WeakReference<GoogleMap>(googleMap), new WeakReference<Activity>(this)).execute(userId);
     }
  
     @Override
